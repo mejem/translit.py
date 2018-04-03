@@ -1,0 +1,30 @@
+/* html,body{ height:100%; }
+body{ background:#4A90E2; display:flex; align-items:center; }
+
+textarea{
+  display: block;
+  box-sizing: padding-box;
+  overflow: hidden;
+
+  padding: 10px;
+  width: 250px;
+  font-size: 14px;
+  margin: 50px auto;
+  border-radius: 6px;
+  box-shadow: 2px 2px 8px rgba(black, .3);
+  border: 0;
+} */
+
+body {
+  background-color: #c6e0ff;
+}
+
+textarea:read-only {
+  background-color: #d6d6d6;
+}
+
+div.main {
+  margin: 10%;
+  display: grid;
+
+}

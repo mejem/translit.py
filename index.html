@@ -1,41 +1,39 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-<meta charset="UTF-8">
-<title>Transliterace</title>
+  <meta charset="UTF-8">
+  <title>Transliterace</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="jquery-3.3.1.min.js"></script>
+
 </head>
 
 <body>
 
+<div class="main">
 <!--<h1>Transliterace</h1>-->
 
 
-<textarea id="input" autofocus></textarea>
+<!-- <textarea id="inputText" autofocus></textarea> -->
 
-<input type="radio" name="lang" value="">automaticky
-<input type="radio" name="lang" value="ru" checked>ruština
-<input type="radio" name="lang" value="uk">ukrajinština
+<textarea id="inputText" class='autoExpand' rows='3' data-min-rows='3' autofocus></textarea>
+
+<script src="autoExpand.js"></script>
+
+<span><input type="radio" name="lang" value="ru" checked>ruština</span>
+<span><input type="radio" name="lang" value="uk">ukrajinština</span>
+
+
 
 <br>
-<textarea id="output" readonly></textarea>
+<textarea id="output" rows='3' data-min-rows='3' readonly></textarea>
 
-  <button type="button" onclick="loadDoc()">Change Content</button>
+  <!-- <button type="button" onclick="loadDoc()">Change Content</button> -->
 
-<script>
-function loadDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-     document.getElementById("output").innerHTML = this.responseText;
-    }
-  };
-  var lang = document.querySelector("input[name=lang]:checked").value;
-  xhttp.open("POST", "translit.cgi?" + lang, true);
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  var inp = document.getElementById("input").value;
-  xhttp.send(inp);
-}
-</script>
+<script src="loadDoc.js"></script>
+
+</div>
 
 </body>
 
