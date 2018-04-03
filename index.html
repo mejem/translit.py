@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>Transliterace</title>
+</head>
+
+<body>
+
+<!--<h1>Transliterace</h1>-->
+
+
+<textarea id="input" autofocus></textarea>
+
+<input type="radio" name="lang" value="">automaticky
+<input type="radio" name="lang" value="ru" checked>ruština
+<input type="radio" name="lang" value="uk">ukrajinština
+
+<br>
+<textarea id="output" readonly></textarea>
+
+  <button type="button" onclick="loadDoc()">Change Content</button>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("output").innerHTML = this.responseText;
+    }
+  };
+  var lang = document.querySelector("input[name=lang]:checked").value;
+  xhttp.open("POST", "translit.cgi?" + lang, true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  var inp = document.getElementById("input").value;
+  xhttp.send(inp);
+}
+</script>
+
+</body>
+
+</html>

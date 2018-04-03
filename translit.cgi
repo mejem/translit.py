@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
 
-import cgi, cgitb, sys
+import sys, os
 # https://stackoverflow.com/questions/4374455/how-to-set-sys-stdout-encoding-in-python-3
 sys.stdout = open(sys.stdout.fileno(), mode='w', encoding='utf8', buffering=1)
-cgitb.enable()
+sys.stdin = open(sys.stdin.fileno(), mode='r', encoding='utf8', buffering=1)
+# cgitb.enable()
 
 def main():
-    data = cgi.FieldStorage() 
-
-    input = data.getvalue('input')
-    lang = data.getvalue('lang')
+    input = sys.stdin.read()
+    lang = os.environ['QUERY_STRING']
 
     print("Content-type: text/html; charset=utf-8")
     print()
@@ -85,4 +84,3 @@ def tr_russian(input):
 
 
 main()
-
