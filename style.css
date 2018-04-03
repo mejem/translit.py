@@ -20,11 +20,23 @@ body {
 }
 
 textarea:read-only {
-  background-color: #d6d6d6;
+  background-color: #e8e8e8;
+}
+
+textarea {
+  border-radius: 10px;
+  padding: 8px;
+  display: table-row-group;
 }
 
 div.main {
   margin: 10%;
-  display: grid;
+  display: table;
+}
 
+div.lang {
+  background-color: grey;
+  margin: 10px;
+  border-radius: 10px;
+  display: table-cell;
 }
