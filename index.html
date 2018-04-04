@@ -4,46 +4,93 @@
   <meta charset="UTF-8">
   <title>Transliterace</title>
 
-  <!-- <link rel="stylesheet" href="style.css"> -->
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="w3.css">
+  <link rel="stylesheet" href="style.css">
   <script src="jquery-3.3.1.min.js"></script>
 
 </head>
 
 <body>
 
-<!-- <div class="main"> -->
-<!--<h1>Transliterace</h1>-->
+<div class="main">
 
+<h1>Transliterace</h1>
 
-<!-- <textarea id="inputText" autofocus></textarea> -->
+<div>
+<h4>Cyrilice</h4>
+<textarea id="inputText" rows='12' autofocus></textarea>
+</div>
 
-<textarea id="inputText" class='autoExpand' rows='3' data-min-rows='3' autofocus></textarea>
-
-<script src="autoExpand.js"></script>
-
-<!-- <div class="lang"> -->
-  <input type="radio" name="lang" value="ru" checked>
-  ruština
-  <img src="russian_federation_flag.gif">
-<!-- </div> -->
-
-<!-- <div class="lang"> -->
-  <input type="radio" name="lang" value="uk">
-  ukrajinština
-  <img src="ukraine_flag.gif">
-<!-- </div> -->
+<div class="lang">
+  <label for="ru">
+    <input class="w3-check" id="ru" type="radio" name="lang" value="ru" checked>
+    ruština
+    <img src="russian_federation_flag.gif" class="w3-border w3-round" style="max-width:50px" alt="ru flag">
+  </label>
+</div>
 
 
 
-<br>
-<textarea id="output" rows='3' data-min-rows='3' readonly></textarea>
+<div class="lang">
+  <label for="uk">
+    <input class="w3-check" id="uk" type="radio" name="lang" value="uk">
+    ukrajinština
+    <img src="ukraine_flag.gif" class="w3-border w3-round" style="max-width:50px" alt="uk flag">
+  </label>
+</div>
 
-  <!-- <button type="button" onclick="loadDoc()">Change Content</button> -->
+<script>
+// pamatovat si naposledy zaskrtnuty jazyk
+$('#uk').prop('checked', localStorage['checked'] == 'uk');
 
+$('#ru').click(function () {
+    localStorage["checked"] = "ru";
+});
+$('#uk').click(function () {
+    localStorage["checked"] = "uk";
+});
+</script>
+
+<!-- <div contenteditable>
+  cont
+</div> -->
+
+<div>
+<h4>Latinka</h4>
+<textarea id="output" rows='12' readonly></textarea>
 <script src="loadDoc.js"></script>
+</div>
 
-<!-- </div> -->
+<div class="tooltip">
+  <button onclick="copy()" onmouseout="outFunc()">
+    <span class="tooltiptext" id="myTooltip">Zkopírovat do schánky</span>
+    Kopírovat
+    </button>
+
+<script>
+function copy() {
+  var copyText = document.getElementById("output");
+  var tooltip = document.getElementById("myTooltip");
+  if (copyText.innerHTML != 0) {
+    copyText.select();
+    document.execCommand("Copy");
+    tooltip.innerHTML = "Zkopírováno";
+  } else {
+    tooltip.innerHTML = "Výstup je prázdný";
+  }
+}
+function outFunc() {
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Zkopírovat do schánky";
+}
+</script>
+</div>
+
+<!-- <div>
+  Autor aplikace: Matouš Ejem
+</div> -->
+
+</div>
 
 </body>
 
