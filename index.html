@@ -18,25 +18,27 @@
 
 <div class="main">
 
-<div>
+<div class="w3-container">
 <h4>Cyrilice</h4>
 <textarea id="inputText" rows='12' autofocus></textarea>
 </div>
 
-<div class="lang">
-  <label for="ru">
+<div class="w3-container">
+<label for="ru">
+  <span class="lang w3-btn w3-white w3-border w3-round-large">
     <input class="w3-check" id="ru" type="radio" name="lang" value="ru" checked>
     ruština
     <img src="img/russian_federation_flag.gif" class="w3-border w3-round" style="max-width:50px" alt="ru flag">
-  </label>
-</div>
+  </span>
+</label>
 
-<div class="lang">
-  <label for="uk">
+<label for="uk">
+  <span class="lang w3-btn w3-white w3-border w3-round-large">
     <input class="w3-check" id="uk" type="radio" name="lang" value="uk">
     ukrajinština
     <img src="img/ukraine_flag.gif" class="w3-border w3-round" style="max-width:50px" alt="uk flag">
-  </label>
+  </span>
+</label>
 </div>
 
 <div id="loader" style="visibility: hidden" class="w3-display-middle loader loader2"></div>
@@ -53,17 +55,20 @@ $('#uk').click(function () {
 });
 </script>
 
-<div>
+<div class="w3-container">
 <h4>Latinka</h4>
-<textarea id="output" rows='12' readonly></textarea>
+<textarea class="readonly" id="output" rows='12' readonly>Tato aplikace vyžaduje zapnutý JavaScript.</textarea>
+<script>
+  document.getElementById('output').innerHTML = '';
+</script>
 <script src="js/loadDoc.js"></script>
 </div>
 
-<div class="tooltip">
-  <button onclick="copy()" onmouseout="outFunc()">
+<div class="tooltip w3-container">
+  <button class="w3-btn w3-white w3-border w3-border-blue w3-round" onclick="copy()" onmouseout="outFunc()">
     <span class="tooltiptext" id="myTooltip">Zkopírovat do schánky</span>
     Kopírovat
-    </button>
+  </button>
 
 <script>
 function copy() {

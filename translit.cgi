@@ -12,7 +12,7 @@ def main():
     output = transliterate(input, lang)
 
     print("Content-type: text/html; charset=utf-8\n")
-    print(output)
+    print(output, end = '')
 
 def transliterate(input, lang):
     if lang == "ru":

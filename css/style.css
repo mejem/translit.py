@@ -11,17 +11,15 @@ textarea {
     outline: none;
 }
 
-textarea:read-only {
+textarea.readonly {
   background-color: #d6d6d6;
 }
 
 
-div.lang {
+span.lang {
   margin: 10px;
   display: inline-block;
-  background-color: white;
   padding: 10px;
-  border-radius: 10px;
 }
 
 h1 {
@@ -31,7 +29,6 @@ h1 {
   margin-left: auto;
   margin-right: auto;
 }
-
 
 div.main {
   width: 80%;
@@ -99,7 +96,7 @@ p.footer {
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 140px;
+  width: 220px;
   background-color: #555;
   color: #fff;
   text-align: center;
