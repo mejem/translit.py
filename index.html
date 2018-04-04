@@ -12,9 +12,11 @@
 
 <body>
 
-<div class="main">
+<div class="w3-blue">
+  <h1>Transliterace</h1>
+</div>
 
-<h1>Transliterace</h1>
+<div class="main">
 
 <div>
 <h4>Cyrilice</h4>
@@ -29,8 +31,6 @@
   </label>
 </div>
 
-
-
 <div class="lang">
   <label for="uk">
     <input class="w3-check" id="uk" type="radio" name="lang" value="uk">
@@ -38,6 +38,8 @@
     <img src="ukraine_flag.gif" class="w3-border w3-round" style="max-width:50px" alt="uk flag">
   </label>
 </div>
+
+<div id="loader" style="visibility: hidden" class="w3-display-middle loader loader2"></div>
 
 <script>
 // pamatovat si naposledy zaskrtnuty jazyk
@@ -50,10 +52,6 @@ $('#uk').click(function () {
     localStorage["checked"] = "uk";
 });
 </script>
-
-<!-- <div contenteditable>
-  cont
-</div> -->
 
 <div>
 <h4>Latinka</h4>
