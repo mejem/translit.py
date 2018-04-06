@@ -74,7 +74,7 @@ $('#uk').click(function () {
 function copy() {
   var copyText = document.getElementById("output");
   var tooltip = document.getElementById("myTooltip");
-  if (copyText.innerHTML != 0) {
+  if (copyText.innerHTML.length != 0) {
     copyText.select();
     document.execCommand("Copy");
     tooltip.innerHTML = "Zkopírováno";
@@ -93,7 +93,7 @@ function outFunc() {
 
 <div class="footer w3-dark-grey">
   <p class="footer">
-    <a href="https://github.com/mejem/translit" target="_blank">zdrojový kód</a>
+    <a href="https://github.com/mejem/translit.py" target="_blank">zdrojový kód</a>
   </p>
 </div>
 

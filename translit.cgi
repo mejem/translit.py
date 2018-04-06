@@ -43,7 +43,7 @@ def tr_ukrainian(input):
 
 def tr_russian(input):
     cyrilic =      "АаБбВвГгДдЕеЁёЖжЗзИиЙйКкЛлМмНнОоПпРрСсТтУуФфЦцЧчШшЪъЫыЬьЭэ"  + "ХхЩщЮюЯя"
-    czech   = list("AaBbVvGgDdEeEeŽžZzIiJjKkLlMmNnOoPpRrSsTtUuUuCcČčŠš””Yy’’Èè") + ['Ch', 'ch', 'Šč', 'šč', 'Ju', 'ju', 'Ja', 'ja']
+    czech   = list("AaBbVvGgDdEeEeŽžZzIiJjKkLlMmNnOoPpRrSsTtUuFfCcČčŠš””Yy’’Èè") + ['Ch', 'ch', 'Šč', 'šč', 'Ju', 'ju', 'Ja', 'ja']
 
     rules = dict(zip(cyrilic, czech))
     vocals = list("АаЕеЁёИиОоУуЪъЫыЬьЭэЮюЯя")
